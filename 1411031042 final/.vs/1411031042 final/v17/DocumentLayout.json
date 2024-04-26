@@ -1,0 +1,37 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\asus\\Downloads\\s1411031042-NetFinal\\1411031042 final\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{746C898C-9F22-4D86-B25B-36EAB0292E43}|1411031042 final\\1411031042 final.csproj|c:\\users\\asus\\downloads\\s1411031042-netfinal\\1411031042 final\\1411031042 final\\views\\car\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{746C898C-9F22-4D86-B25B-36EAB0292E43}|1411031042 final\\1411031042 final.csproj|solutionrelative:1411031042 final\\views\\car\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\asus\\Downloads\\s1411031042-NetFinal\\1411031042 final\\1411031042 final\\Views\\CAR\\Index.cshtml",
+              "RelativeDocumentMoniker": "1411031042 final\\Views\\CAR\\Index.cshtml",
+              "ToolTip": "C:\\Users\\asus\\Downloads\\s1411031042-NetFinal\\1411031042 final\\1411031042 final\\Views\\CAR\\Index.cshtml",
+              "RelativeToolTip": "1411031042 final\\Views\\CAR\\Index.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-04-26T08:01:58.122Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
