@@ -1,0 +1,30 @@
+﻿@model _1411031042_final.ViewModels.BenzViewModel
+
+@using (Html.BeginForm("SaveInfoBenz", "CAR", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.Model)
+        @Html.TextBoxFor(model => model.Model, new { @class = "form-control" })
+        @Html.ValidationMessageFor(model => model.Model)
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.Money)
+        @Html.TextBoxFor(model => model.Money, new { @class = "form-control" })
+        @Html.ValidationMessageFor(model => model.Money)
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.NewImage)
+        @Html.TextBoxFor(model => model.NewImage, new { type = "file" })
+        @Html.ValidationMessageFor(model => model.NewImage)
+    </div>
+
+    <div class="form-group">
+        @Html.HiddenFor(model => model.ID)
+        <input type="submit" value="儲存" class="btn btn-primary" />
+        <a href="@Url.Action("Benz", "CAR")" class="btn btn-default">取消</a>
+    </div>
+}

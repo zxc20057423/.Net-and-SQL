@@ -1,0 +1,60 @@
+﻿@model _1411031042_final.ViewModels.CARViewModels
+@{
+    ViewBag.Title = "Benz";
+    Layout = "~/Views/Shared/CARLayout.cshtml";
+}
+
+<h2>Mercedes-Benz</h2>
+<p>
+    <h4>
+    將豪華品質、運動風格與優異性能合為一體。無論是轎車、旅行車、轎跑車、Cabrio、敞篷跑車、運動休旅車（SUV）或更多。
+    </h4>
+</p>
+<div class="row">
+    @if (!Model.BenzList.Count.Equals(0))
+    {
+        foreach (var item in Model.BenzList)
+        {
+            <div class="col-sm-6 col-md-4">
+                <div class="thumbnail">
+                    <img src="@Url.Content("~/Images/"+item.Image)">
+                    <div class="caption">
+                        <h3>@item.Model</h3>
+                        <div class="price">NT$<h>@item.Money</h></div>
+                        <div class="button-row">
+                            <a href="@Url.Action("EditBenz", "CAR", new { id = item.ID })" class="btn btn-primary" style="display: inline-block; margin-right: 5px;">編輯</a>
+                            <form action="@Url.Action("DeleteBenz", "CAR")" method="post" style="display: inline-block;">
+                                <input type="hidden" name="ID" value="@item.ID" />
+                                <input type="submit" value="刪除" class="btn btn-danger" />
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }
+    }
+</div>
+
+<h2>新增Benz的庫存車輛</h2>
+<form action="/CAR/saveBenz" method="post" enctype="multipart/form-data">
+    <p>
+        <label for="file">車輛圖片:</label>
+        <input type="file" name="file" class="form-control" id="file" />
+    </p>
+    <p>
+        <label for="Model">車輛型號:</label>
+        <input type="text" name="Model" class="form-control" id="model" />
+    </p>
+    <p>
+        <label for="Money">金額:</label>
+        <input type="number" name="Money" class="form-control" id="money" />
+    </p>
+    <p>
+        <input type="submit" value="上傳" class="btn btn-info" />
+    </p>
+</form>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
+

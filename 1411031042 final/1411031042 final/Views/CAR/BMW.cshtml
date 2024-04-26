@@ -1,0 +1,59 @@
+﻿@model _1411031042_final.ViewModels.CARViewModels
+@{
+    ViewBag.Title = "BMW";
+    Layout = "~/Views/Shared/CARLayout.cshtml";
+}
+
+<h2>BMW</h2>
+<p>
+    <h4>
+        秉持「先有服務、後有銷售」的經營理念，汎德從創業之初一路堅持初衷，從交車整備、作業流程、維修技術、零件庫存到展示中心，全面帶入以客戶體驗為中心的革命思維，期許帶給客戶最頂級貼心的禮遇及服務享受。
+    </h4>
+</p>
+<div class="row">
+    @if (!Model.BMWList.Count.Equals(0))
+    {
+        foreach (var item in Model.BMWList)
+        {
+            <div class="col-sm-6 col-md-4">
+                <div class="thumbnail">
+                    <img src="@Url.Content("~/Images/"+item.Image)">
+                    <div class="caption">
+                        <h3>@item.Model</h3>
+                        <div class="price">NT$<h>@item.Money</h></div>
+                        <div class="button-row">
+                            <a href="@Url.Action("EditBMW", "CAR", new { id = item.ID })" class="btn btn-primary" style="display: inline-block; margin-right: 5px;">編輯</a>
+                            <form action="@Url.Action("DeleteBMW", "CAR")" method="post" style="display: inline-block;">
+                                <input type="hidden" name="ID" value="@item.ID" />
+                                <input type="submit" value="刪除" class="btn btn-danger" />
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }
+    }
+</div>
+
+<h2>新增BMW的庫存車輛</h2>
+<form action="/CAR/saveBMW" method="post" enctype="multipart/form-data">
+    <p>
+        <label for="file">車輛圖片:</label>
+        <input type="file" name="file" class="form-control" id="file" />
+    </p>
+    <p>
+        <label for="Model">車輛型號:</label>
+        <input type="text" name="Model" class="form-control" id="model" />
+    </p>
+    <p>
+        <label for="Money">金額:</label>
+        <input type="number" name="Money" class="form-control" id="money" />
+    </p>
+    <p>
+        <input type="submit" value="上傳" class="btn btn-info" />
+    </p>
+</form>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
